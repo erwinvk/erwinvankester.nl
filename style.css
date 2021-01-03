@@ -4,6 +4,12 @@ font-family: sans-serif;
 background: #fffef5;
 }
 
+a
+{
+  color: #fcba03;
+  font-weight: bold;
+}
+
 .container
 {
 width: 600px;
