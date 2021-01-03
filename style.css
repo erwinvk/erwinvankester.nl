@@ -15,3 +15,9 @@ a
 width: 600px;
 margin: 0 auto;
 }
+
+.container img
+{
+  width: 200px;
+  margin: 0 auto;
+}
