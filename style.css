@@ -16,8 +16,13 @@ width: 600px;
 margin: 0 auto;
 }
 
-.container img
+.container
 {
   width: 200px;
   margin: 0 auto;
+}
+
+.imgcontainer
+{
+  text-align: center;
 }
