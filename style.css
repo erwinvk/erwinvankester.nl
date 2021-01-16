@@ -10,12 +10,6 @@ a
   font-weight: bold;
 }
 
-.container
-{
-width: 600px;
-margin: 0 auto;
-}
-
 .imgcontainer
 {
   text-align: center;
@@ -24,4 +18,22 @@ margin: 0 auto;
 .imgcontainer img
 {
   width: 200px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+ul li
+{
+    padding: 0;
+    margin: 0;
+}
+
+.instafeed img
+{
+    max-width: 400px;
 }
