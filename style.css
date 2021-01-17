@@ -10,6 +10,10 @@ a
   font-weight: bold;
 }
 
+p{
+    text-align: justify;
+}
+
 .imgcontainer
 {
   text-align: center;
@@ -36,4 +40,9 @@ ul li
 .instafeed img
 {
     max-width: 400px;
+}
+
+.profilepicture{
+    border-radius: 50px;
+    width: 100%;
 }
