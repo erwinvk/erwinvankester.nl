@@ -4,6 +4,11 @@ font-family: sans-serif;
 background: #fffef5;
 }
 
+.bg-dark
+{
+    color: #fefefe;
+}
+
 a
 {
   color: #fcba03;
@@ -12,6 +17,10 @@ a
 
 p{
     text-align: justify;
+}
+
+.navbar .container {
+    padding: 10px 180px;
 }
 
 .container
@@ -45,10 +54,55 @@ ul li
 
 .instafeed img
 {
-    max-width: 400px;
+    max-width: 100%;
 }
 
 .profilepicture{
     border-radius: 50px;
-    width: 100%;
+    width: 70%;
+}
+
+.background-light {
+    background: #000;
+    color: #fff;
+}
+
+.career .time
+{
+    color: #888;
+}
+
+.skills .clear {
+    clear: both;
+}
+
+.skills h6 {
+    margin-top: 20px;
+}
+
+    .skills h6:first-child
+    {
+        margin-top: 0;
+    }
+
+    .skills ul {
+        margin-bottom: 20px;
+    }
+
+    .skills li {
+        transition-duration: .2s;
+        opacity: 0.7;
+        float: left;
+        background: #eee;
+        color: #333;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        padding: 2px 5px;
+        border-radius: 5px;
+    }
+
+.skills li:hover
+{
+    opacity: 1;
+    
 }
