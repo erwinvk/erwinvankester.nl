@@ -9,16 +9,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/magnific.popup.css">
     <link rel="stylesheet" href="style.css">
-    
     <title>Erwin van Kester</title>
 </head>
 <body>
     <header>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class=" bg-dark shadow-sm text-center">
             <div class="container">
-                <a href="#" class="navbar-brand d-flex align-items-center">
-                    Erwin van Kester
-                </a>
+                <h1>Erwin van Kester</h1>
+                <ul class="socialmedia">
+                    <li><a href="https://twitter.com/erwinvk" class="twitter"></a></li>
+                    <li><a href="https://www.linkedin.com/in/erwinvankester/" class="linkedin"></a></li>
+                    <li><a href="https://www.instagram.com/erwinvk/" class="instagram"></a></li>
+                </ul>
+                <div class="clear"></div>
             </div>
         </div>
     </header>
@@ -27,20 +30,12 @@
         <section class="py-3 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-10 col-md-10 mx-auto">
-                    <h1>About me</h1>
                     <div class="row">
                         <div class="col-lg-6"><img class="profilepicture" src="erwin.jpg" title="Erwin" /></div>
                         <div class="col-lg-6">
-                            <p class="lead text-muted">Hi there! My name is Erwin van Kester (1988) and I currently live in Naaldwijk, but will move to Amsterdam soon. I am a full stack .NET (web) developer and make electronic music with my brother, under the name Airtime. You can find things that interest me on here.</p>
+                            <p class="lead text-muted">Hi there! My name is Erwin van Kester (1988) and I currently live in Naaldwijk, but will move to Amsterdam soon. I am a full stack .NET (web) developer and make electronic music with my brother, under the name <a href="https://musicofairtime.nl" target="_blank">Airtime</a>. You can find more information on this webpage. You can contact me on <a class="emailaddress" href="#">erwinvankester[at]gmail[dot].com</a></p>
                         </div>
                     </div>
-                    <ul>
-                        <li><a href="https://musicofairtime.nl" target="_blank">my music</a></li>
-                        <li><a href="https://twitter.com/erwinvk" target="_blank">twitter</a></li>
-                        <li><a href="https://www.linkedin.com/in/erwinvankester/" target="_blank">linkedin</a></li>
-                        <li><a href="https://www.instagram.com/erwinvk/" target="_blank">instagram</a></li>
-                        <li><a href="bitcoin:1ErwiNMhp4tgU1DYhRTicQkJYzGdnAJrKc">bitcoin address</a></li>
-                    </ul>
                 </div>
             </div>
         </section>
@@ -143,6 +138,17 @@
             <div class="clear"></div>
         </section>
 
+        <div class="">
+            <section class="py-5 container lastfm">
+                <h3>Most listened to artists</h3>
+                <div class="row py-lg-12">
+                    <div class="col-lg-12">
+                        <ul id="lastfmtop10"><li>Loading...</li></ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
         <div class="bg-dark">
             <section class="py-5 container photostream">
                 <div class="row py-lg-12">
@@ -155,16 +161,12 @@
             </section>
         </div>
     </main>
-    <!-- Optional JavaScript; choose one of the two! -->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <footer>
+        <a href="bitcoin:1ErwiNMhp4tgU1DYhRTicQkJYzGdnAJrKc">bitcoin address</a>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/magnific.popup.min.js"></script>
     <script src="default.js"></script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
 </body>
 </html>

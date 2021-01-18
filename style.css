@@ -16,7 +16,7 @@ a
 }
 
 p{
-    text-align: justify;
+    text-align:left;
 }
 
 .navbar .container {
@@ -26,7 +26,7 @@ p{
 .container
 {
     max-width: 1280px;
-    padding: 40px 180px;
+    
 }
 
 .imgcontainer
@@ -52,8 +52,40 @@ ul li
     margin: 0;
 }
 
-.instafeed img
+.socialmedia{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.socialmedia li
 {
+    display: block;
+    float: left;
+    margin-right: 5px;
+}
+
+.linkedin, .twitter, .instagram {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+}
+
+.linkedin
+{
+    background: url(img/icon_linkedin.svg);
+}
+
+.twitter {
+    background: url(img/icon_twitter.svg);
+}
+
+.instagram {
+    background: url(img/icon_instagram.svg);
+}
+
+.instafeed img {
     max-width: 100%;
 }
 
@@ -105,4 +137,15 @@ ul li
 {
     opacity: 1;
     
+}
+
+.lastfm img
+{
+width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+    .container {
+        padding: 40px 180px;
+    }
 }
