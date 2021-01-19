@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <div class=" bg-dark shadow-sm text-center">
+        <div class="bg-dark shadow-sm text-center">
             <div class="container">
                 <h1>Erwin van Kester</h1>
                 <ul class="socialmedia">
@@ -21,7 +21,6 @@
                     <li><a href="https://www.linkedin.com/in/erwinvankester/" class="linkedin"></a></li>
                     <li><a href="https://www.instagram.com/erwinvk/" class="instagram"></a></li>
                 </ul>
-                <div class="clear"></div>
             </div>
         </div>
     </header>
@@ -33,7 +32,7 @@
                     <div class="row">
                         <div class="col-lg-6"><img class="profilepicture" src="erwin.jpg" title="Erwin" /></div>
                         <div class="col-lg-6">
-                            <p class="lead text-muted">Hi there! My name is Erwin van Kester (1988) and I currently live in Naaldwijk, but will move to Amsterdam soon. I am a full stack .NET (web) developer and make electronic music with my brother, under the name <a href="https://musicofairtime.nl" target="_blank">Airtime</a>. You can find more information on this webpage. You can contact me on <a class="emailaddress" href="#">erwinvankester[at]gmail[dot].com</a></p>
+                            <p class="lead text-muted">Hi there! My name is Erwin van Kester (1988) and I currently live in Naaldwijk, but will move to Amsterdam soon. I am a full stack .NET (web) developer and make electronic music with my brother, under the name <a href="https://musicofairtime.nl" target="_blank">Airtime</a>. I've put some information and stuff I'm into on this page. Contact me on <a class="emailaddress" href="#">erwinvankester[at]gmail[dot]com</a> if you'd like to share anything!</p>
                         </div>
                     </div>
                 </div>
@@ -43,7 +42,7 @@
         <div class="bg-dark">
             <section class="py-5 container career">
                 <h3>Career</h3>
-                <div class="row py-lg-4">
+                <div class="row py-lg-4 item">
                     <div class="col-lg-3">
                         <h4>Finnik</h4>
                         <p class="time">Feb 2021 - current</p>
@@ -53,7 +52,7 @@
                         <p>I will start working at <a href="https://finnik.nl" target="_blank">Finnik</a>. They are situated in B. Amsterdam.</p>
                     </div>
                 </div>
-                <div class="row py-lg-4">
+                <div class="row py-lg-4 item">
                     <div class="col-lg-3">
                         <h4>Nalta.com</h4>
                         <p class="time">Oct 2010 - Dec 2020</p>
@@ -63,7 +62,7 @@
                         <p>I started at Nalta with my graduation internship, and continued working there on projects for clients like PostNL and Miele.</p>
                     </div>
                 </div>
-                <div class="row py-lg-4">
+                <div class="row py-lg-4 item">
                     <div class="col-lg-3">
                         <h4>TH Rijswijk (HHS)</h4>
                         <p class="time">2006 - 2010</p>
@@ -85,6 +84,8 @@
 
         <section class="py-5 container skills">
             <h3>Skills and Hobbies</h3>
+            <p>Some of my serious and less serious skills.</p>
+
             <h6>Programming / Web development</h6>
             <ul>
                 <li>.NET Framework / Core (C#)</li>
@@ -138,12 +139,18 @@
             <div class="clear"></div>
         </section>
 
-        <div class="">
+        <div class="bg-red">
             <section class="py-5 container lastfm">
-                <h3>Most listened to artists</h3>
+                <h3>Most listened to artists (last 3 months)</h3>
+                <p>I love listening to a wide range of music. These are the artists I listened to most, according to LastFM. The details are fetched from their API. Leave me a message if you want to talk about music! </p>
                 <div class="row py-lg-12">
                     <div class="col-lg-12">
                         <ul id="lastfmtop10"><li>Loading...</li></ul>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        More over on <a href="https://www.last.fm/user/Erwinvk" target="_blank">LastFm</a>.
                     </div>
                 </div>
             </section>
@@ -155,14 +162,30 @@
                     <div class="col-lg-12 col-md-12 mx-auto">
                         <h2>Photostream</h2>
                         <p class="instafeed"></p>
-                        <p><a href="https://www.instagram.com/erwinvk/">More pictures on instagram</a></p>
+                        
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        More pictures on <a href="https://www.instagram.com/erwinvk/">Instagram</a>.
                     </div>
                 </div>
             </section>
         </div>
     </main>
     <footer>
-        <a href="bitcoin:1ErwiNMhp4tgU1DYhRTicQkJYzGdnAJrKc">bitcoin address</a>
+        <div class="">
+            <section class="py-5 container photostream">
+                <div class="row py-lg-12">
+                    <div class="col-lg-12 col-md-12 mx-auto">
+                        <h2>Bitcoin</h2>
+                        <p>I have generated a Bitcoin address that starts with my name. Leave me some sats if you like what you saw!</p>
+                        <a href="bitcoin:1ErwiNMhp4tgU1DYhRTicQkJYzGdnAJrKc">1ErwiNMhp4tgU1DYhRTicQkJYzGdnAJrKc</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="js/jquery.min.js"></script>

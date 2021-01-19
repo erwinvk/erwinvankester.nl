@@ -38,51 +38,62 @@ function setEmail() {
     $('.emailaddress').text(email);
 }
 
-/*function getArtistImage(name) {
-    const settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.spotify.com/v1/search?q=Radiohead&type=artist&market=NL&limit=2&offset=5",
-        "method": "GET",
-        "headers": {
-            "Authorization": "Bearer BQAXaTai88fb8Qw0p82Zf4tRTmuezjnl_XRK3LeazmgehPFs6w7p23gPDjW-Ziti73QpP-ZH2qKYYXq_qYbtiM5pDOIuEPsn05mXuS7DfHAweZ6-IWooteBqWE37H6pjgBN3VuTVs20",
-        }
-    };
+function GetLastFmScrobbleData() {
+    //$.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=erwinvk&api_key=78026a5c9cda529f9559d9e3d8c78695&format=json', function (data) {
+    //maybe get total plays some time or something.
+    //});
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-        debugger;
-    });
-}*/
-
-$(document).ready(function () {
-    setEmail();
-
-	$.get( "https://graph.instagram.com/me/media?access_token=IGQVJWNDUzLUxYN0FoQkRYRS03RXpWWjYxaHFnNmo1VG4wV2lFR1VnMUNobVFxcWRhWnlKVWZAWTkxMVy1RVzhtT0dWX3l1RTNjbnZAzcXNFU2QxRk50OWNiTlMzUGgxeWxoNHRqbHVnLUdqZAFVEX2VfNQZDZD&fields=media_url,media_type,caption,permalink", function( data ) {
-		for (var i = 0; i < 10; i++)
-	    {
-            $('.instafeed').append('<a class="gallery-item" data-permalink="' + data.data[i].permalink + '" href="' + data.data[i].media_url + '"><img src="' + data.data[i].media_url + '"/></a>');
-        }
-
-        init_magnificPopup();
-    });
-
-    //get lastFM scrobble data
-    $.getJSON('http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=erwinvk&period=3month&api_key=78026a5c9cda529f9559d9e3d8c78695&limit=10&format=json&callback=?', function (data) {
-        var artistTop10 = data.topartists.artist;
+    $.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=erwinvk&period=3month&api_key=78026a5c9cda529f9559d9e3d8c78695&limit=5&format=json&callback=?', function (data) {
+        var artistTop = data.topartists.artist;
         var html = '';
-        for (var i = 0; i < artistTop10.length; i++) {
-            var imgArray = artistTop10[i].image;
+        for (var i = 0; i < artistTop.length; i++) {
+            var imgArray = artistTop[i].image;
             for (var j = 0; j < imgArray.length; j++) {
                 if (imgArray[j].size == 'large') {
-                    html += '<li data-mbid="' + artistTop10[i].mbid + '">' + artistTop10[i].name + ' ' + artistTop10[i].playcount + '</li>';
+                    html += '<li data-artist="' + artistTop[i].name + '"> <div class="artist"><div class="name">' + artistTop[i].name + '</div><div class="plays"> ' + artistTop[i].playcount + ' plays</div></div></li>';
 
                     //getArtistImage(artistTop10[i].name);
                 }
             }
         }
 
+        //Artists don't have valid images on the api. so get top albums and display these if they match.
+        GetTopAlbums();
         $('#lastfmtop10').html(html);
-        
     });
+}
+
+function GetTopAlbums() {
+    $.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=erwinvk&period=3month&api_key=78026a5c9cda529f9559d9e3d8c78695&limit=15&format=json&callback=?', function (data) {
+        var albumTop = data.topalbums;
+
+        for (var i = 0; i < albumTop.album.length; i++) {
+            var artist = albumTop.album[i].artist.name;
+
+            for (var j = 0; j < albumTop.album[i].image.length; j++) {
+                if (albumTop.album[i].image[j].size == 'medium') {
+                    $('li[data-artist="' + artist + '"]').prepend('<img src="' + albumTop.album[i].image[j]['#text'] + '"/>')
+                }
+            }
+
+            //check if we have this mbid
+        }
+    });
+}
+
+function GetInstagramPhotos() {
+    $.get("https://graph.instagram.com/me/media?access_token=IGQVJWNDUzLUxYN0FoQkRYRS03RXpWWjYxaHFnNmo1VG4wV2lFR1VnMUNobVFxcWRhWnlKVWZAWTkxMVy1RVzhtT0dWX3l1RTNjbnZAzcXNFU2QxRk50OWNiTlMzUGgxeWxoNHRqbHVnLUdqZAFVEX2VfNQZDZD&fields=media_url,media_type,caption,permalink", function (data) {
+        for (var i = 0; i < 10; i++) {
+            $('.instafeed').append('<a class="gallery-item" data-permalink="' + data.data[i].permalink + '" href="' + data.data[i].media_url + '"><img src="' + data.data[i].media_url + '"/></a>');
+        }
+
+        init_magnificPopup();
+    });
+}
+
+$(document).ready(function () {
+    setEmail();
+
+    GetInstagramPhotos();
+    GetLastFmScrobbleData();
 });

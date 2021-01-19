@@ -9,10 +9,14 @@ background: #fffef5;
     color: #fefefe;
 }
 
-a
-{
-  color: #fcba03;
-  font-weight: bold;
+.bg-red {
+    color: #fefefe;
+    background: #d51007;
+}
+
+a {
+    color: #fcba03;
+    font-weight: bold;
 }
 
 p{
@@ -91,7 +95,7 @@ ul li
 
 .profilepicture{
     border-radius: 50px;
-    width: 70%;
+    width: 80%;
 }
 
 .background-light {
@@ -99,10 +103,19 @@ ul li
     color: #fff;
 }
 
-.career .time
+.career .item
 {
-    color: #888;
+    opacity: 0.8;
 }
+
+    .career .item:hover{
+        transition-duration: .2s;
+        opacity: 1;
+    }
+
+    .career .time {
+        color: #888;
+    }
 
 .skills .clear {
     clear: both;
@@ -139,13 +152,65 @@ ul li
     
 }
 
-.lastfm img
-{
-width: 100%;
+#lastfmtop10 img {
+    width: 64px;
+    float: left;
 }
 
-@media only screen and (min-width: 800px) {
+#lastfmtop10 .artist
+{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#lastfmtop10 .artist .name
+{
+    font-weight: bold;
+}
+
+#lastfmtop10 .artist .plays
+{
+    opacity: 0.7;
+}
+
+#lastfmtop10 li:hover .artist .plays {
+    transition-duration: .2s;
+    opacity: 1;
+}
+
+    #lastfmtop10 li {
+        margin-bottom: 10px;
+        clear: both;
+        height: 64px;
+    }
+
+@media (min-width: 768px) {
     .container {
         padding: 40px 180px;
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header > div {
+        height: 90px;
+        padding-top: 10px;
+    }
+
+    .socialmedia
+    {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        top: 0;
+        right:0;
+        width: 111px;
+
     }
 }
