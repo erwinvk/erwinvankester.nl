@@ -152,10 +152,20 @@ ul li
     
 }
 
-#lastfmtop10 img {
-    width: 64px;
-    float: left;
+.gallery-item img
+{
+    opacity: 0.9;
 }
+
+.gallery-item:hover img {
+    opacity: 1;
+    transition-duration: .2s
+}
+
+    #lastfmtop10 img {
+        width: 64px;
+        float: left;
+    }
 
 #lastfmtop10 .artist
 {
