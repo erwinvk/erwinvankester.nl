@@ -98,10 +98,10 @@ ul li
     width: 80%;
 }
 
-.background-light {
-    background: #000;
-    color: #fff;
-}
+    .background-light {
+        background: #000;
+        color: #fff;
+    }
 
 .career .item
 {
@@ -144,13 +144,12 @@ ul li
         margin-bottom: 5px;
         padding: 2px 5px;
         border-radius: 5px;
+        
     }
 
-.skills li:hover
-{
-    opacity: 1;
-    
-}
+        .skills li:hover {
+            opacity: 1;
+        }
 
 .gallery-item img
 {
@@ -165,6 +164,7 @@ ul li
     #lastfmtop10 img {
         width: 64px;
         float: left;
+        border-radius: 5px;
     }
 
 #lastfmtop10 .artist
@@ -194,6 +194,15 @@ ul li
         clear: both;
         height: 64px;
     }
+
+        #lastfmtop10 li:hover img  {
+            /*width: 70px;
+            height: 70px;
+            margin-left: -2px;
+            margin-top: -2px;*/
+            zoom: 1.06;
+            transition-duration: .2s
+        }
 
 @media (min-width: 768px) {
     .container {
