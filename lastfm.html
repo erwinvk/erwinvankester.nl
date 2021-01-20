@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LastFm vd week</title>
+    <meta name=”robots” content="noindex, nofollow">
+</head>
+<body>
+
+    <div id="lastfmtop10"></div>
+
+       <script src="js/jquery.min.js"></script>
+    <script>
+
+        $.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=erwinvk&period=7day&api_key=78026a5c9cda529f9559d9e3d8c78695&limit=10&format=json&callback=?', function (data) {
+            var artistTop = data.topartists.artist;
+            var html = '';
+            for (var i = 0; i < artistTop.length; i++) {
+
+                html += (i+1) + '. ' + artistTop[i].name + ' ' + artistTop[i].playcount + ' <br/>';
+            }
+
+            $('#lastfmtop10').html(html);
+        });
+    </script>
+</body>
+</html>
