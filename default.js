@@ -64,15 +64,17 @@ function GetLastFmScrobbleData() {
 }
 
 function GetTopAlbums() {
-    $.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=erwinvk&period=3month&api_key=78026a5c9cda529f9559d9e3d8c78695&limit=15&format=json&callback=?', function (data) {
+    $.getJSON('https://ws.audioscrobbler.com/2.0/?method=user.getTopAlbums&user=erwinvk&period=3month&api_key=78026a5c9cda529f9559d9e3d8c78695&limit=30&format=json&callback=?', function (data) {
         var albumTop = data.topalbums;
 
         for (var i = 0; i < albumTop.album.length; i++) {
             var artist = albumTop.album[i].artist.name;
 
             for (var j = 0; j < albumTop.album[i].image.length; j++) {
-                if (albumTop.album[i].image[j].size == 'medium') {
-                    $('li[data-artist="' + artist + '"]').prepend('<img src="' + albumTop.album[i].image[j]['#text'] + '"/>')
+                if ($('#lastfmtop10 li[data-artist="' + artist + '"]').length > 0 && $('#lastfmtop10 li[data-artist="' + artist + '"]').html().toString().indexOf('img src') < 0) {
+                    if (albumTop.album[i].image[j].size == 'medium') {
+                        $('#lastfmtop10 li[data-artist="' + artist + '"]').prepend('<img src="' + albumTop.album[i].image[j]['#text'] + '"/>')
+                    }
                 }
             }
 
