@@ -84,7 +84,7 @@ function GetTopAlbums() {
 }
 
 function GetInstagramPhotos() {
-    $.get("https://graph.instagram.com/me/media?access_token=IGQVJWNDUzLUxYN0FoQkRYRS03RXpWWjYxaHFnNmo1VG4wV2lFR1VnMUNobVFxcWRhWnlKVWZAWTkxMVy1RVzhtT0dWX3l1RTNjbnZAzcXNFU2QxRk50OWNiTlMzUGgxeWxoNHRqbHVnLUdqZAFVEX2VfNQZDZD&fields=media_url,media_type,caption,permalink", function (data) {
+    $.get("https://graph.instagram.com/me/media?access_token=IGQVJYelhtMVBISjhBcnFLMmt4SFBvb2p2LWhtSWpnZAS00RVA1azFjMldxbmxoaWZACb1RPZATlWZAGFLcEp4cU41S3dtQk0yODR6Wk1JSjNfN2hFNHBtUmJPeWpfRFpCTXBMTXVWRGd0b0tZAQmJseF9RWgZDZD&fields=media_url,media_type,caption,permalink", function (data) {
         for (var i = 0; i < 10; i++) {
             $('.instafeed').append('<a class="gallery-item" data-permalink="' + data.data[i].permalink + '" href="' + data.data[i].media_url + '"><img src="' + data.data[i].media_url + '"/></a>');
         }
